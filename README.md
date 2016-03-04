@@ -19,7 +19,7 @@ Codility
 * prefix_set.py (easy, arrays)
 * disc_intersections.py (moderate/hard)
 * base_neg2.py (moderate/hard)
-* asymmetry_index.py (moderate)
+* asymmetry_index.py (moderate) - need to fix
 
 CodeEval
 ========
@@ -50,3 +50,4 @@ Miscellaneous
 * first_nonrepeat_char.py (moderate/hard, arrays, hash tables, linked lists)
 * largest_contiguous_subvector.py (moderate/hard, big-O, recursion, dynamic programming)
 * division.py (moderate/hard, recursion, bits)
+* itertools_recipes.py (not an exercise, stolen from python docs)
