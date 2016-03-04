@@ -1,7 +1,8 @@
-K&R
-===
+K&R / C library
+===============
 
 * atoi.py (easy, arrays)
+* itoa.py (easy, arrays)
 * squeeze.py (easy, arrays)
 
 Interactive Python
