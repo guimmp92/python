@@ -8,6 +8,7 @@ A good example of graph BFS.
 from collections import defaultdict, deque
 from graph import Graph, Vertex
 
+
 def build_graph(word_file='/usr/share/dict/words'):
     buckets = defaultdict(list)
     words = open(word_file, 'r')
@@ -33,6 +34,7 @@ def build_graph(word_file='/usr/share/dict/words'):
 
     return graph
 
+
 def print_shortest_path(vertex):
     stack = []
     while vertex:
@@ -44,6 +46,7 @@ def print_shortest_path(vertex):
     print
     while stack:
         print stack.pop()
+
 
 def find_shortest_path(graph, word1='pool', word2='sage'):
     queue = deque()
@@ -66,6 +69,7 @@ def find_shortest_path(graph, word1='pool', word2='sage'):
                 neighbor.color = Vertex.GRAY
                 neighbor.parent = vertex
         vertex.color = Vertex.BLACK
+
 
 g = build_graph()
 find_shortest_path(g, 'okee', 'stam')

@@ -67,6 +67,7 @@ def knight_tour(cur_path_len, path, to_visit, target_path_len):
 
     return done
 
+
 dimension = 5
 g = build_graph(dimension)
 solution_path = []
