@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 """
-Convert an integer number in any base into a string, e.g. 10 in base 123 --> "123"
+Convert an integer number in any base into a string, e.g. 123 in base 10 --> "123"
 """
 
 
