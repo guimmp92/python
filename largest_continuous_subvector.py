@@ -1,0 +1,128 @@
+#!/usr/bin/python
+
+"""
+Given a vector x of n floating-point numbers (positive or negative), return the maximum
+sum found in any contiguous subvector of the input.
+
+Programming Pearls p77
+"""
+
+
+def algo1(x):
+    """
+    Calculate x[i:j] for each pair (i, j).
+    Time complexity: O(n3)
+
+    >>> algo1([31, -41, 59, 26, -53, 58, 97, -93, -23, 84])
+    187
+    >>> algo1([31, 41, 59, 26, 53, 58, 97, 93, 23, 84])
+    565
+    >>> algo1([31])
+    31
+    >>> algo1([-31])
+    0
+    """
+    maxsofar = 0
+    for i in range(len(x)):
+        cursum = 0
+        for j in range(len(x[i:])):
+            cursum = sum(x[i:j+1])
+            if cursum > maxsofar:
+                maxsofar = cursum
+    return maxsofar
+
+
+def algo2(x):
+    """
+    Calculate x[i:j] for each pair (i, j) without summing interval on every pass.
+    Time complexity: O(n2)
+
+    >>> algo2([31, -41, 59, 26, -53, 58, 97, -93, -23, 84])
+    187
+    >>> algo2([31, 41, 59, 26, 53, 58, 97, 93, 23, 84])
+    565
+    >>> algo2([31])
+    31
+    >>> algo2([-31])
+    0
+    """
+    cumsum = []
+    cursum = 0
+    for i in range(len(x)):
+        cursum += x[i]
+        cumsum.append(cursum)
+
+    maxsofar = 0
+    for i in range(len(x)):
+        cursum = 0
+        for j in range(len(x[i:])):
+            if i > 0:
+                cursum = cumsum[j] - cumsum[i-1]
+            else:
+                cursum = cumsum[j]
+            if cursum > maxsofar:
+                maxsofar = cursum
+    return maxsofar
+
+
+def find_largest_subvector(x, left, right):
+    if left > right:
+        return 0
+    if left == right:
+        return max(x[left], 0)
+
+    middle = (left+right)//2
+    leftmax, rightmax = 0, 0
+    cursum = 0
+    for elem in reversed(x[left:middle]):
+        cursum += elem
+        leftmax = max(leftmax, cursum)
+    cursum = 0
+    for elem in x[middle:right+1]:
+        cursum += elem
+        rightmax = max(rightmax, cursum)
+
+    return max(leftmax+rightmax,
+               find_largest_subvector(x, left, middle),
+               find_largest_subvector(x, middle+1, right))
+
+
+def algo3(x):
+    """
+    Time complexity: O(nlog(n))
+
+    >>> algo3([31, -41, 59, 26, -53, 58, 97, -93, -23, 84])
+    187
+    >>> algo3([31, 41, 59, 26, 53, 58, 97, 93, 23, 84])
+    565
+    >>> algo3([31])
+    31
+    >>> algo3([-31])
+    0
+    """
+    return find_largest_subvector(x, 0, len(x)-1)
+
+
+def algo4(x):
+    """
+    Time complexity: O(n)
+
+    >>> algo4([31, -41, 59, 26, -53, 58, 97, -93, -23, 84])
+    187
+    >>> algo4([31, 41, 59, 26, 53, 58, 97, 93, 23, 84])
+    565
+    >>> algo4([31])
+    31
+    >>> algo4([-31])
+    0
+    """
+    maxsofar = 0
+    maxendinghere = 0
+    for i in range(len(x)):
+        maxendinghere = max(maxendinghere + x[i], 0)
+        maxsofar = max(maxsofar, maxendinghere)
+    return maxsofar
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
