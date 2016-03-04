@@ -1,13 +1,3 @@
-Miscellaneous
-=============
-
-* reconstruct_serialized_tree.py (easy, hash tables)
-* square_root.py (easy, binary search)
-* tree_to_linked_list.py (moderate, binary search trees, linked list, stacks)
-* first_nonrepeat_char.py (moderate/hard, arrays, hash tables, linked lists)
-* largest_contiguous_subvector.py (moderate/hard, big-O, recursion, dynamic programming)
-* division.py (moderate/hard, recursion, bits)
-
 K&R
 ===
 
@@ -49,3 +39,13 @@ Pramp
 * different_number.py (easy, arrays, hashing)
 * quad_combination.py (easy/moderate, arrays, hash tables)
 * inorder.py (moderate)
+
+Miscellaneous
+=============
+
+* reconstruct_serialized_tree.py (easy, hash tables)
+* square_root.py (easy, binary search)
+* tree_to_linked_list.py (moderate, binary search trees, linked list, stacks)
+* first_nonrepeat_char.py (moderate/hard, arrays, hash tables, linked lists)
+* largest_contiguous_subvector.py (moderate/hard, big-O, recursion, dynamic programming)
+* division.py (moderate/hard, recursion, bits)
