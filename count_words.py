@@ -5,6 +5,7 @@ Count the number of words in a string.
 
 https://github.com/juchem/prep/blob/master/exercises.md
 """
+
 from collections import Counter
 
 
@@ -36,6 +37,7 @@ def count_words(s):
     count += 1  # account for the last word
 
     return count
+
 
 if __name__ == "__main__":
     import doctest

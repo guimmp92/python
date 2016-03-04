@@ -17,9 +17,9 @@ Codility
 * equi_index.py (easy, arrays)
 * tape_equilibrium.py (easy, arrays)
 * prefix_set.py (easy, arrays)
+* asymmetry_index.py (moderate) - need to fix
 * disc_intersections.py (moderate/hard)
 * base_neg2.py (moderate/hard)
-* asymmetry_index.py (moderate) - need to fix
 
 CodeEval
 ========
@@ -40,6 +40,11 @@ Pramp
 * different_number.py (easy, arrays, hashing)
 * quad_combination.py (easy/moderate, arrays, hash tables)
 * inorder.py (moderate)
+
+https://github.com/juchem/prep
+==============================
+
+* count_words.py (easy, strings)
 
 Miscellaneous
 =============
