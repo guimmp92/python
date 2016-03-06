@@ -27,7 +27,6 @@ def k_modes_array(arr, k):
                 most_frequent.append(x)
         idx = reduce(lambda x, y: x if counter[x] <= counter[y] else y, most_frequent)
         cur_min = counter[idx]
-
     return sorted(most_frequent)
 
 
@@ -88,6 +87,33 @@ def k_modes_array2(arr, k):
                 heappop(most_frequent)
                 heappush(most_frequent, x)
     return sorted(most_frequent[1:])
+
+
+arr = [9, 5, 3, 5, 9, 8, 9, 0, 9, 8, 9, 5, 6, 2, 3, 5, 4, 5, 6, 0, 1, 0, 0, 0, 0, 0, 0]
+stream = (x for x in arr)
+
+
+def k_modes_stream(stream, k):
+    """
+    The above solutions for a fixed input array can be generalized for a stream.
+    """
+    most_frequent = list()
+    cur_min = None
+    counter = defaultdict(int)
+    x = stream.next()
+    while x:
+        counter[x] += 1
+        if x not in most_frequent:
+            if len(most_frequent) < k:
+                most_frequent.append(x)
+            elif counter[x] > cur_min:
+                to_del = filter(lambda y: counter[y] == cur_min, most_frequent)[0]
+                most_frequent.remove(to_del)
+                most_frequent.append(x)
+        idx = reduce(lambda x, y: x if counter[x] <= counter[y] else y, most_frequent)
+        cur_min = counter[idx]
+        x = stream.next()
+    return sorted(most_frequent)
 
 
 if __name__ == "__main__":
