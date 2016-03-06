@@ -39,6 +39,7 @@ Pramp
 * lover_letter.py (easy, hash tables)
 * different_number.py (easy, arrays, hashing)
 * duplicates.py (easy, arrays, binsearch)
+* largest_smaller.py (easy/moderate, bst)
 * quad_combination.py (easy/moderate, arrays, hash tables)
 * inorder.py (moderate)
 
