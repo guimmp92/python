@@ -38,6 +38,7 @@ Pramp
 
 * lover_letter.py (easy, hash tables)
 * different_number.py (easy, arrays, hashing)
+* duplicates.py (easy, arrays, binsearch)
 * quad_combination.py (easy/moderate, arrays, hash tables)
 * inorder.py (moderate)
 
@@ -45,6 +46,7 @@ https://github.com/juchem/prep
 ==============================
 
 * count_words.py (easy, strings)
+* k_modes.py (moderate, hash tables, arrays, min-heaps)
 
 Miscellaneous
 =============

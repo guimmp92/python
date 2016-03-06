@@ -6,13 +6,6 @@ Implementation of a binary heap using level ordering. Assuming 1-index:
 http://interactivepython.org/runestone/static/pythonds/Trees/BinaryHeapImplementation.html
 """
 
-import random
-
-arr = []
-for i in range(25):
-    arr.append(random.randint(0, 50))
-print "The array: {0}".format(arr)
-
 
 class BinHeap(object):
     def __init__(self):
