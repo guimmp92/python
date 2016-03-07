@@ -11,6 +11,11 @@ Interactive Python
 * word_ladder.py (hard, graphs, bfs)
 * knight_tour.py (hard, graphs, dfs)
 
+Programming Pearls
+==================
+
+* largest_contiguous_subvector.py (moderate/hard, arrays, recursion, dynamic programming)
+
 Codility
 ========
 
@@ -43,11 +48,18 @@ Pramp
 * quad_combination.py (easy/moderate, arrays, hash tables)
 * inorder.py (moderate)
 
+Toptal
+======
+
+* even_numbers.py (easy)
+
 https://github.com/juchem/prep
 ==============================
 
 * count_words.py (easy, strings)
 * k_modes.py (moderate, hash tables, arrays, min-heaps)
+* interval_overlaps.py (moderate, arrays)
+* division.py (moderate/hard, recursion, bits)
 
 Miscellaneous
 =============
@@ -56,6 +68,5 @@ Miscellaneous
 * square_root.py (easy, binary search)
 * tree_to_linked_list.py (moderate, binary search trees, linked list, stacks)
 * first_nonrepeat_char.py (moderate/hard, arrays, hash tables, linked lists)
-* largest_contiguous_subvector.py (moderate/hard, big-O, recursion, dynamic programming)
-* division.py (moderate/hard, recursion, bits)
 * itertools_recipes.py (not an exercise, stolen from python docs)
+* conway_game_of_life.py
