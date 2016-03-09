@@ -47,6 +47,7 @@ Pramp
 * largest_smaller.py (easy/moderate, bst)
 * quad_combination.py (easy/moderate, arrays, hash tables)
 * inorder.py (moderate)
+* budget_cuts.py (hard, arrays, binsearch)
 
 Toptal
 ======
