@@ -49,6 +49,11 @@ Pramp
 * inorder.py (moderate)
 * budget_cuts.py (hard, arrays, binsearch)
 
+Cracking the Coding Interview
+============================
+
+* replace_spaces.py (easy, arrays)
+
 Toptal
 ======
 
