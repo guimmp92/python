@@ -1,8 +1,10 @@
 #!/usr/bin/python
 
 """
-Given a binary search tree, print the elements in-order iteratively without using
+Part 1: Given a binary search tree, print the elements in-order iteratively without using
 recursion.
+
+Part 2: Same problem but this time w/o using a stack or any additional memory.
 
 http://stackoverflow.com/questions/2116662/help-me-understand-inorder-traversal-without-using-recursion
 http://articles.leetcode.com/binary-search-tree-in-order-traversal
