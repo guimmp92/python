@@ -44,6 +44,7 @@ def find_smallest_snippet(*args):
 
     return [lower_bound, upper_bound]
 
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
