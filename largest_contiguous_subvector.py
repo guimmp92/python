@@ -82,7 +82,7 @@ def find_largest_subvector(x, left, right):
         rightmax = max(rightmax, cursum)
 
     return max(leftmax+rightmax,
-               find_largest_subvector(x, left, middle),
+               find_largest_subvector(x, left, middle-1),
                find_largest_subvector(x, middle+1, right))
 
 
