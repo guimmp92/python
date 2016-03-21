@@ -24,7 +24,6 @@ def algo1(x):
     """
     maxsofar = 0
     for i in range(len(x)):
-        cursum = 0
         for j in range(len(x[i:])):
             cursum = sum(x[i:j+1])
             if cursum > maxsofar:
