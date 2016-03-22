@@ -12,62 +12,6 @@ http://articles.leetcode.com/binary-search-tree-in-order-traversal
 from bintree import randbintree
 
 
-def inorder(node):
-    if not node:
-        return
-    inorder(node.left)
-    print node.key
-    inorder(node.right)
-
-def inorder2(node):
-    while node:
-        inorder2(node.left)
-        print node.key
-        node = node.right
-
-def inorder3(root):
-    stack = list()
-    node = root
-    while node:
-        if node.left:
-            stack.append(node)
-            node = node.left
-        else:
-            print node.key
-            node = node.right
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def inorder_recursive(node):
     if not node:
         return
