@@ -19,7 +19,8 @@ def findmatch(pattern, text):
             if t[i1+i2] != c2:
                 break
         else:
-            return True
-    return False
+            return i1
+    return -1
+
 
 print findmatch(p, t)
