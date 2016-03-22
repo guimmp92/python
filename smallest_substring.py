@@ -29,8 +29,10 @@ def solution(arr, str):
     start, end = 0, len(str)-1
     tracker = dict()
     min_idx = 0
-    for i in range(len(str)):
-        tracker[str[i]] = i
+    for i, c in enumerate(str):
+        if c not in arr:
+            continue
+        tracker[c] = i
         if len(tracker) != len(arr):
             continue
         min_idx = reduce(min, tracker.values())
