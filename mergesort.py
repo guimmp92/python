@@ -11,6 +11,7 @@ for i in range(25):
     arr.append(random.randint(0, 50))
 print "The array: {0}".format(arr)
 
+
 def merge(arr, left, right):
     i, j, k = 0, 0, 0
     while i < len(left) and j < len(right):
@@ -30,6 +31,7 @@ def merge(arr, left, right):
         j += 1
         k += 1
 
+
 def mergesort(a):
     if len(a) == 1:
         return a
@@ -39,6 +41,7 @@ def mergesort(a):
     mergesort(left)
     mergesort(right)
     merge(a, left, right)
+
 
 mergesort(arr)
 print arr
