@@ -23,7 +23,7 @@ Codility
 * tape_equilibrium.py (easy, arrays)
 * prefix_set.py (easy, arrays)
 * asymmetry_index.py (moderate) - need to fix
-* disc_intersections.py (moderate/hard)
+* disc_intersections.py (moderate/hard, arrays, binsearch)
 * base_neg2.py (moderate/hard)
 
 CodeEval
@@ -65,7 +65,7 @@ https://github.com/juchem/prep
 
 * count_words.py (easy, strings)
 * k_modes.py (moderate, hash tables, arrays, min-heaps)
-* interval_overlaps.py (moderate, arrays)
+* interval_overlaps.py (moderate, arrays, mergesort)
 * division.py (moderate/hard, recursion, bits)
 
 Miscellaneous

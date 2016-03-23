@@ -41,8 +41,7 @@ def solution(X, A):
     >>> solution(1, [5, 5, 5, 5, 5])
     4
     """
-    N = len(A)
-    i, j = 0, N-1
+    i, j = 0, len(A)-1
     count_left, count_right = 0, 0
 
     if A[i] == X:
