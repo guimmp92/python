@@ -24,13 +24,52 @@ http://www.geeksforgeeks.org/print-a-given-matrix-in-spiral-form/
 
 def solution(m):
     """
+    >>> solution([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
+    1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10
+    >>> solution([[1, 2, 3, 4]])
+    1 2 3 4
+    >>> solution([[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18]])
+    1 2 3 4 5 6 12 18 17 16 15 14 13 7 8 9 10 11
+    """
+    lo_col, hi_col = 0, len(m[0])-1
+    lo_row, hi_row = 0, len(m)-1
+
+    spiral = []
+    while lo_row <= hi_row and lo_col <= hi_col:
+        # Print row from left to right
+        for i in range(lo_col, hi_col+1):
+            spiral.append(m[lo_row][i])
+        lo_row += 1
+
+        # Print col from top to bottom
+        for i in range(lo_row, hi_row+1):
+            spiral.append(m[i][hi_col])
+        hi_col -= 1
+
+        if lo_row <= hi_row:
+            # Print row from right to left
+            if lo_col <= hi_col:
+                for i in range(hi_col, lo_col-1, -1):
+                    spiral.append(m[hi_row][i])
+                hi_row -= 1
+
+            # Print col from bottom up
+            if lo_row <= hi_row:
+                for i in range(hi_row, lo_row-1, -1):
+                    spiral.append(m[i][lo_col])
+                lo_col += 1
+
+    print " ".join([str(e) for e in spiral])
+
+
+def solution2(m):
+    """
     This solution traverses and prints either one row or one colum per iteration of the
     while loop. It is not very concise.
     A cleaner solution involves traversing and printing two rows and two columns per
-    iteration (one complete circle).
-    See: http://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/
+    iteration (one complete circle). See above solution.
 
-    >>> solution([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
+    >>> solution2([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
     1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10
     """
     res = []
