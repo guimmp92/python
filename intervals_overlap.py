@@ -49,6 +49,9 @@ def solution1(arrl, exit):
 
 def solution2(arrl, exit):
     """
+    Time complexity: O(n)
+    Traverse both arrival and exit lists in parallel using merge portion of mergesort
+    and keep track of max number of overlap.
     >>> solution2([1, 2, 9, 5, 5], [4, 5, 12, 9, 12])
     5
     """
@@ -73,6 +76,7 @@ def solution2(arrl, exit):
             j += 1
 
     return res
+
 
 if __name__ == "__main__":
     import doctest
