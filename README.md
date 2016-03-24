@@ -51,9 +51,14 @@ Pramp
 * smallest_substring.py (moderate/hard, strings)
 
 Cracking the Coding Interview
-============================
+=============================
 
 * replace_spaces.py (easy, arrays)
+
+Geeks For Geeks
+===============
+
+* url_shortener.py (moderate, arrays, division)
 
 Toptal
 ======
@@ -73,7 +78,7 @@ Miscellaneous
 
 * reconstruct_serialized_tree.py (easy, hash tables)
 * square_root.py (easy, binary search)
-* tree_to_linked_list.py (moderate, binary search trees, linked list, stacks)
+* tree_to_linked_list.py (moderate, bst, linked lists, stacks)
 * first_nonrepeat_char.py (moderate/hard, arrays, hash tables, linked lists)
 * itertools_recipes.py (not an exercise, stolen from python docs)
 * conway_game_of_life.py
