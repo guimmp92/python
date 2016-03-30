@@ -14,7 +14,7 @@ Interactive Python
 Programming Pearls
 ==================
 
-* largest_contiguous_subvector.py (moderate/hard, arrays, recursion, dynamic programming)
+* largest_contiguous_subvector.py (moderate/hard, arrays, dynamic programming)
 
 Codility
 ========
@@ -59,6 +59,7 @@ Geeks For Geeks
 ===============
 
 * url_shortener.py (moderate, arrays, division)
+* edit_distance.py (moderate, dynamic programming)
 
 Toptal
 ======
@@ -82,3 +83,4 @@ Miscellaneous
 * first_nonrepeat_char.py (moderate/hard, arrays, hash tables, linked lists)
 * itertools_recipes.py (not an exercise, stolen from python docs)
 * conway_game_of_life.py
+* coin_change.py (moderate, dynamic programming)
