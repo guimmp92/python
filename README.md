@@ -80,6 +80,7 @@ Miscellaneous
 
 * reconstruct_serialized_tree.py (easy, hash tables)
 * square_root.py (easy, binary search)
+* fib.py (easy, dynamic programming)
 * tree_to_linked_list.py (moderate, bst, linked lists, stacks)
 * first_nonrepeat_char.py (moderate/hard, arrays, hash tables, linked lists)
 * itertools_recipes.py (not an exercise, stolen from python docs)
