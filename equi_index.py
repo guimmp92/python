@@ -25,6 +25,7 @@ def find_equi_index(A):
         cumsum += A[i]
     return res
 
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()

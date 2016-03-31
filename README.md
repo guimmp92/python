@@ -43,12 +43,12 @@ Pramp
 
 * lover_letter.py (easy, hash tables)
 * different_number.py (easy, arrays, hashing)
-* duplicates.py (easy, arrays, binary search)
+* duplicates.py (easy, searching, arrays, binary search)
 * largest_smaller.py (easy/moderate, bst)
-* quad_combination.py (easy/moderate, arrays, hash tables)
-* inorder.py (moderate)
+* quad_combination.py (easy/moderate, searching, arrays, hash tables)
+* inorder.py (moderate, bst)
+* smallest_substring.py (moderate/hard, searching, strings)
 * budget_cuts.py (hard, arrays, binary search)
-* smallest_substring.py (moderate/hard, strings)
 
 Cracking the Coding Interview
 =============================
@@ -58,8 +58,11 @@ Cracking the Coding Interview
 Geeks For Geeks
 ===============
 
-* closest_pair.py (easy/moderate, arrays, mergesort)
-* closest_pair2.py (easy/moderate, arrays, mergesort)
+* closest_pair.py (easy/moderate, searching, arrays, mergesort)
+* closest_pair2.py (easy/moderate, searching, arrays, mergesort)
+* closest_trio.py (easy/moderate, searching, arrays, mergesort)
+* nearest_smaller.py (moderate, searching, arrays, stacks)
+* pivot_index.py (moderate, searching, arrays)
 * url_shortener.py (moderate, arrays, division)
 * digits_sum.py (moderate, dynamic programming)
 * edit_distance.py (moderate, dynamic programming)
