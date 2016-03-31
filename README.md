@@ -23,7 +23,7 @@ Codility
 * tape_equilibrium.py (easy, arrays)
 * prefix_set.py (easy, arrays)
 * asymmetry_index.py (moderate) - need to fix
-* disc_intersections.py (moderate/hard, arrays, binsearch)
+* disc_intersections.py (moderate/hard, arrays, binary search)
 * base_neg2.py (moderate/hard)
 
 CodeEval
@@ -43,11 +43,11 @@ Pramp
 
 * lover_letter.py (easy, hash tables)
 * different_number.py (easy, arrays, hashing)
-* duplicates.py (easy, arrays, binsearch)
+* duplicates.py (easy, arrays, binary search)
 * largest_smaller.py (easy/moderate, bst)
 * quad_combination.py (easy/moderate, arrays, hash tables)
 * inorder.py (moderate)
-* budget_cuts.py (hard, arrays, binsearch)
+* budget_cuts.py (hard, arrays, binary search)
 * smallest_substring.py (moderate/hard, strings)
 
 Cracking the Coding Interview
@@ -58,6 +58,8 @@ Cracking the Coding Interview
 Geeks For Geeks
 ===============
 
+* closest_pair.py (easy/moderate, arrays, mergesort)
+* closest_pair2.py (easy/moderate, arrays, mergesort)
 * url_shortener.py (moderate, arrays, division)
 * digits_sum.py (moderate, dynamic programming)
 * edit_distance.py (moderate, dynamic programming)
