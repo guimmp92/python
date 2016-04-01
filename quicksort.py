@@ -11,6 +11,7 @@ for i in range(10):
     arr.append(random.randint(0, 50))
 print "The array: {0}".format(arr)
 
+
 def partition(a, left, right):
     pivot = a[(left+right)//2]
     i, j = left, right
@@ -22,6 +23,7 @@ def partition(a, left, right):
         if i < j:
             a[i], a[j] = a[j], a[i]
     return i
+
 
 def partition2(a, left, right):
     pivot_idx = (left+right)//2
@@ -35,11 +37,13 @@ def partition2(a, left, right):
     a[to_copy], a[right] = a[right], a[to_copy]
     return to_copy
 
+
 def quicksort(a, left, right):
     if left < right:
         idx = partition2(a, left, right)
         quicksort(a, left, idx-1)
         quicksort(a, idx+1, right)
+
 
 quicksort(arr, 0, len(arr)-1)
 print arr
