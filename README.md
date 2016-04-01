@@ -66,6 +66,7 @@ Geeks For Geeks
 * url_shortener.py (moderate, arrays, division)
 * digits_sum.py (moderate, dynamic programming)
 * edit_distance.py (moderate, dynamic programming)
+* rod_cut.py (moderate, dynamic programming)
 
 Toptal
 ======

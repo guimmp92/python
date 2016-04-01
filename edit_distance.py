@@ -40,6 +40,7 @@ def recursive(str1, str2):
 
 def dp(str1, str2):
     """
+    Bottom-up dynamic programming.
     Time complexity: O(m*n)
     Space complexity: O(m*n)
     >>> dp("geek", "gesek")
