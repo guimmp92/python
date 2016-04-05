@@ -14,6 +14,7 @@ class Graph(object):
     def get_vertex(self, key):
         return self.vertices.get(key, None)
 
+
 class Vertex(object):
     WHITE = 'white'  # undiscovered
     GRAY = 'gray'  # discovered, e.g. all vertices in the BFS queue are gray
