@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
 """
+Write a program to determine the lowest common ancestor of two nodes in a binary search
+tree.
+
 https://www.codeeval.com/open_challenges/11/
 
 """

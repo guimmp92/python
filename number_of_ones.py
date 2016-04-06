@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
 """
-https://www.codeeval.com/open_challenges/16/
-
 Write a program which determines the number of 1 bits in the internal representation of
 a given integer.
+
+https://www.codeeval.com/open_challenges/16/
 """
 import sys
 
@@ -25,7 +25,7 @@ def number_of_ones(x):
         count += x & 1
         q, r = divmod(x, 2)  # equivalent to x >> 1
         if x < 0:
-            x = q + 1
+            x = q + 1  # division of negative is floored (as opposed to rounded up)
         else:
             x = q
     return count

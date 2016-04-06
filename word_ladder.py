@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
 """
+Transform word1 into word2. At each step you must transform one word into another word.
+You are not allowed to transform a word into a non-word.
+
 http://interactivepython.org/runestone/static/pythonds/Graphs/TheWordLadderProblem.html
 A good example of graph BFS.
 """
