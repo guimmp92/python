@@ -46,6 +46,7 @@ Pramp
 * duplicates.py (easy, searching, arrays, binary search)
 * largest_smaller.py (easy/moderate, bst)
 * quad_combination.py (easy/moderate, searching, arrays, hash tables)
+* successor_search.py (easy/moderate, bst)
 * inorder.py (moderate, bst)
 * smallest_substring.py (moderate/hard, searching, strings)
 * budget_cuts.py (hard, arrays, binary search)
