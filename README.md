@@ -55,6 +55,7 @@ Cracking the Coding Interview
 =============================
 
 * replace_spaces.py (easy, arrays)
+* string_compression.py (easy, arrays, strings)
 
 Geeks For Geeks
 ===============
