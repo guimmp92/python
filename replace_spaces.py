@@ -17,7 +17,7 @@ def solution1(text):
     old_len = len(text)
     space_count = sum(map(lambda x: 1 if x == ' ' else 0, text))
 
-    # Expand input string to accomodate for %20
+    # Expand input string to accommodate for %20
     for i in range(space_count * 2):
         text.append("_")  # dummy character
 
@@ -38,7 +38,7 @@ def solution1(text):
 
 def solution2(text):
     """
-    Single pass w/ queue solution O(n).
+    Single forward pass w/ queue solution O(n).
 
     >>> solution1("let's replace all whitespaces with %20")
     "let's%20replace%20all%20whitespaces%20with%20%20"
