@@ -57,6 +57,7 @@ Cracking the Coding Interview
 * replace_spaces.py (easy, arrays)
 * string_compression.py (easy, arrays, strings)
 * remove_dups.py (easy, linked lists)
+* kth_to_last.py (easy, linked lists, recursion)
 
 Geeks For Geeks
 ===============
