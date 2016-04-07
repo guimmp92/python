@@ -41,8 +41,8 @@ class LinkedList(object):
         return res
 
 
-def randlinkedlist(size=10):
+def randlinkedlist(size=10, max=50):
     linkedlist = LinkedList()
     for i in range(size):
-        linkedlist.push(random.randint(0, 50))
+        linkedlist.push(random.randint(0, max))
     return linkedlist
