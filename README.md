@@ -58,6 +58,7 @@ Cracking the Coding Interview
 * string_compression.py (easy, arrays, strings)
 * remove_dups.py (easy, linked lists)
 * kth_to_last.py (easy, linked lists, recursion)
+* remove_middle_node.py (easy, linked lists)
 
 Geeks For Geeks
 ===============
