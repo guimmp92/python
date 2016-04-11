@@ -10,11 +10,11 @@ http://stackoverflow.com/questions/4801242/algorithm-to-calculate-number-of-inte
 def solution(A):
     """
     A solution in linear time using the merge portion of the mergesort algorithm.
+    Similar to intervals_overlap.py.
     >>> solution([1, 5, 2, 1, 4, 0])
     11
     """
-    lo_bounds = list()
-    hi_bounds = list()
+    lo_bounds, hi_bounds = list(), list()
     for i, a in enumerate(A):
         lo_bounds.append(i-a)
         hi_bounds.append(i+a)
@@ -61,7 +61,7 @@ def solution1(A):
             low_idx += 1
         intersects += low_idx - high_idx + 1
 
-    intersects /= 2  # we only want unordered pairs
+    intersects //= 2  # we only want unordered pairs
     if intersects > 10000000:
         return -1
     return intersects
@@ -103,8 +103,9 @@ def solution2(A):
     lo_bounds = [i[0] for i in intervals]
     for i, (lo, hi) in enumerate(intervals):
         insert_idx = _binsearch(lo_bounds, hi, i, len(intervals)-1)
-        intersects += insert_idx - i - 1
+        intersects += insert_idx - i + 1
 
+    intersects //= 2
     if intersects > 10000000:
         return -1
 
