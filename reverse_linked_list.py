@@ -6,20 +6,21 @@ In other words, after the reversal all pointers should now point backwards.
 Your algorithm should take linear time.
 http://nbl.cewit.stonybrook.edu/algowiki/index.php/Data-structures-TADM2E-2
 """
-
 from linked_list import randlinkedlist
 
 ll = randlinkedlist()
 print "The linked list: {0}".format(ll)
 
+
 def reverse_iterative(linked_list):
-    prev, cur = None, linked_list.head
-    while cur:
-        nnext = cur.next
-        cur.next = prev
+    prev, node = None, linked_list.head
+    while node:
+        nnext = node.next
+        node.next = prev
         if nnext is None:
-            linked_list.head = cur
-        prev, cur = cur, nnext
+            linked_list.head = node
+        prev, node = node, nnext
+    linked_list.head = prev
 
 
 def _reverse(node, prev):
