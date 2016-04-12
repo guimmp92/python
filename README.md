@@ -63,6 +63,7 @@ Cracking the Coding Interview
 Geeks For Geeks
 ===============
 
+* rotate_matrix.py (easy, matrix)
 * closest_pair.py (easy/moderate, searching, arrays, mergesort)
 * closest_pair2.py (easy/moderate, searching, arrays, mergesort)
 * closest_trio.py (easy/moderate, searching, arrays, mergesort)
@@ -72,6 +73,8 @@ Geeks For Geeks
 * digits_sum.py (moderate, dynamic programming)
 * edit_distance.py (moderate, dynamic programming)
 * rod_cut.py (moderate, dynamic programming)
+* tree_views.py (moderate)
+* level_order.py, vertical_order.py (moderate)
 
 Toptal
 ======
