@@ -17,8 +17,8 @@ def iterative(head, k):
 
 
 def visit(node, k, value):
-    if not node.next:
-        return 1
+    if not node:
+        return 0
     count = 1 + visit(node.next, k, value)
     if count == k:
         value.append(node.value)
@@ -43,3 +43,4 @@ if __name__ == "__main__":
     _print(ll.head)
     print "Kth to last element (iterative): %d" % iterative(ll.head, 6)
     print "Kth to last element (recursive): %d" % recursive(ll.head, 6)
+    print "Kth to last element (practice): %d" % solution(ll.head, 6)
