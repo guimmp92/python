@@ -63,7 +63,7 @@ Cracking the Coding Interview
 Geeks For Geeks
 ===============
 
-* rotate_matrix.py (easy, matrix)
+* rotate_matrix.py (easy/moderate, matrix)
 * closest_pair.py (easy/moderate, searching, arrays, mergesort)
 * closest_pair2.py (easy/moderate, searching, arrays, mergesort)
 * closest_trio.py (easy/moderate, searching, arrays, mergesort)
