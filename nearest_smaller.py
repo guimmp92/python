@@ -20,10 +20,10 @@ def solution1(arr):
     for i in range(1, len(arr)):
         while stack and stack[-1] > arr[i]:
             stack.pop()
-        if not stack:
-            nearest_smaller.append(None)
-        else:
+        if stack:
             nearest_smaller.append(stack[-1])
+        else:
+            nearest_smaller.append(None)
         stack.append(arr[i])
     return nearest_smaller
 
