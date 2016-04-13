@@ -11,15 +11,15 @@ https://www.pramp.com/question/pK6A4GA5YES09qKmqG33
 """
 
 
-def solution(root, x):
-    cur = root
-    while cur:
-        if cur.key < x:
-            if not cur.right:
-                return cur.key
-            cur = cur.right
+def solution(node, x):
+    res = None
+    while node:
+        if node.key < x:
+            res = node.value
+            node = node.right
         else:
-            cur = cur.left
+            node = node.left
+    return res
 
 
 if __name__ == "__main__":
