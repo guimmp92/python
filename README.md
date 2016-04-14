@@ -100,3 +100,4 @@ Miscellaneous
 * itertools_recipes.py (not an exercise, stolen from python docs)
 * conway_game_of_life.py
 * coin_change.py (moderate, dynamic programming)
+* longest_substring.py (moderate/hard, searching, strings)
