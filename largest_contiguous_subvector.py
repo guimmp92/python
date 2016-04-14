@@ -45,22 +45,22 @@ def algo2(x):
     >>> algo2([-31])
     0
     """
-    cumsum = []
-    cursum = 0
-    for i in range(len(x)):
-        cursum += x[i]
-        cumsum.append(cursum)
+    rollingsum = [0] * len(x)
+    rollingsum[0] = x[0]
+    for i in range(1, len(x)):
+        rollingsum[i] = rollingsum[i-1] + x[i]
 
     maxsofar = 0
     for i in range(len(x)):
         cursum = 0
         for j in range(len(x[i:])):
             if i > 0:
-                cursum = cumsum[j] - cumsum[i-1]
+                cursum = rollingsum[j] - rollingsum[i-1]
             else:
-                cursum = cumsum[j]
+                cursum = rollingsum[j]
             if cursum > maxsofar:
                 maxsofar = cursum
+
     return maxsofar
 
 
