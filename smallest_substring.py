@@ -14,7 +14,7 @@ https://www.pramp.com/question/wqNo9joKG6IJm67B6z34
 """
 
 
-def solution(arr, str):
+def solution(arr, text):
     """
     >>> solution(['x', 'y', 'z'], "xyyzyzyx")
     'zyx'
@@ -25,22 +25,16 @@ def solution(arr, str):
     >>> solution(['x', 'y', 'z'], "xxyxyxyxxxyxxxz")
     'yxxxz'
     """
-    min_so_far = len(str)
-    start, end = 0, len(str)-1
+    minsofar = text
     tracker = dict()
-    min_idx = 0
-    for i, c in enumerate(str):
-        if c not in arr:
-            continue
-        tracker[c] = i
-        if len(tracker) != len(arr):
-            continue
-        min_idx = reduce(min, tracker.values())
-        min_ending_here = i - min_idx + 1
-        if min_ending_here < min_so_far:
-            start, end = min_idx, i
-            min_so_far = min_ending_here
-    return str[start:end+1]
+    for i in range(len(text)):
+        if text[i] in arr:
+            tracker[text[i]] = i
+        if len(tracker) == len(arr):
+            min_idx = min(tracker.values())
+            if i-min_idx+1 < len(minsofar):
+                minsofar = text[min_idx:i+1]
+    return minsofar
 
 
 if __name__ == "__main__":
