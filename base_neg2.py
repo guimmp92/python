@@ -22,8 +22,6 @@ For negative b, by the way, everything just flips, and the invariant becomes:
 0 >= r > b.
 </quote>
 """
-
-
 from math import floor
 
 
@@ -72,7 +70,9 @@ def solution(A):
     while num != 0:
         q, r = divmod(num, -2)
         if r < 0:
-            q, r = q+1, r+2  # add 1 and (base) 2 to quotient and remainder, resp.
+            # 5 // -2 = -3 --> r = -1 and q = -3
+            # we want r = 1 and q = -2
+            q, r = q+1, r+2  # so add 1 and (base) 2 to quotient and remainder, resp.
         res.append(r)
         num = q
 
