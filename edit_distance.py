@@ -18,7 +18,7 @@ def edit_distance(str1, str2, m, n):
         return n
     if n == 0:
         return m
-    if str1[m] == str2[n]:
+    if str1[m-1] == str2[n-1]:
         return edit_distance(str1, str2, m-1, n-1)
     return 1 + min(edit_distance(str1, str2, m, n-1),    # insert
                    edit_distance(str1, str2, m-1, n),    # remove
@@ -32,10 +32,12 @@ def recursive(str1, str2):
     1
     >>> recursive("cat", "cut")
     1
+    >>> recursive("cat", "put")
+    2
     >>> recursive("sunday", "saturday")
     3
     """
-    return edit_distance(str1, str2, len(str1)-1, len(str2)-1)
+    return edit_distance(str1, str2, len(str1), len(str2))
 
 
 def dp(str1, str2):
