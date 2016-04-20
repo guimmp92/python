@@ -33,7 +33,7 @@ def divide(a, b):
     if div > a:
         div >>= 1
         q >>= 1
-        return q + divide(a - div, b)
+        q += divide(a - div, b)
 
     return q
 
