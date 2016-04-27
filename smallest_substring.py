@@ -16,6 +16,7 @@ https://www.pramp.com/question/wqNo9joKG6IJm67B6z34
 
 def solution(arr, text):
     """
+    Time complexity: O(n)
     >>> solution(['x', 'y', 'z'], "xyyzyzyx")
     'zyx'
     >>> solution(['x', 'y', 'z'], "xyyzxyzyx")
