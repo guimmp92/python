@@ -19,7 +19,6 @@ def _binsearch(arr, x):
 
 def solution(arr):
     """
-    Time complexity:
     >>> solution([1, 3, -1])
     2
     >>> solution([1, 3, 2, 4, 5, 1])
