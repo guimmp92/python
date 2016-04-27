@@ -101,3 +101,5 @@ Miscellaneous
 * conway_game_of_life.py
 * coin_change.py (moderate, dynamic programming)
 * longest_substring.py (moderate/hard, searching, strings)
+* anagrams.py (moderate/hard, strings)
+* longest_ascending.py (hard, arrays, binary search)
