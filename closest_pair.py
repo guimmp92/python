@@ -18,7 +18,7 @@ def solution(arr1, x):
     closest_sum = sys.maxint
 
     i, j = 0, len(arr1)-1
-    while i <= j:
+    while i < j:
         if arr1[i] + arr1[j] == x:
             closest_sum_pair = (arr1[i], arr1[j])
             break
