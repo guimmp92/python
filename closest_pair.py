@@ -8,24 +8,24 @@ http://geeksquiz.com/given-sorted-array-number-x-find-pair-array-whose-sum-close
 import sys
 
 
-def solution(arr1, x):
+def solution(arr, x):
     """
     >>> solution([10, 22, 28, 29, 30, 40], 54)
     (22, 30)
     >>> solution([1, 3, 4, 7, 10], 15)
     (4, 10)
     """
-    closest_sum = sys.maxint
+    diff = sys.maxint
 
-    i, j = 0, len(arr1)-1
+    i, j = 0, len(arr)-1
     while i < j:
-        if arr1[i] + arr1[j] == x:
-            closest_sum_pair = (arr1[i], arr1[j])
+        if arr[i] + arr[j] == x:
+            closest_sum_pair = (arr[i], arr[j])
             break
-        elif abs(arr1[i] + arr1[j] - x) < closest_sum:
-            closest_sum = abs(arr1[i] + arr1[j] - x)
-            closest_sum_pair = (arr1[i], arr1[j])
-        if arr1[i] + arr1[j] < x:
+        elif abs(arr[i] + arr[j] - x) < diff:
+            diff = abs(arr[i] + arr[j] - x)
+            closest_sum_pair = (arr[i], arr[j])
+        if arr[i] + arr[j] < x:
             i += 1
         else:
             j -= 1
