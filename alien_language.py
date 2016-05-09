@@ -25,16 +25,12 @@ def build_graph(words):
     for i in range(1, len(words)):
         word1 = words[i-1]
         word2 = words[i]
-        j, k = 0, 0
-        while j < len(word1) and k < len(word2):
-            if word1[j] == word2[k]:
-                j += 1
-                k += 1
-            else:
-                v1 = graph.add_vertex(word1[j])
-                v2 = graph.add_vertex(word2[k])
-                v1.add_neighbor(v2)
-                break
+        j = 0
+        while word1[j] == word2[j]:
+            j += 1
+        v1 = graph.add_vertex(word1[j])
+        v2 = graph.add_vertex(word2[j])
+        v1.add_neighbor(v2)
     return graph
 
 
