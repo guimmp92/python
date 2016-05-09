@@ -25,7 +25,7 @@ def recursive(M, V):
     if M in V:
         return 1
 
-    return 1 + min([recursive(M-v, V) for v in V if v < M])
+    return 1 + min(recursive(M-v, V) for v in V if v < M)
 
 
 def dp(M, V):

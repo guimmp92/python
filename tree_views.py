@@ -54,20 +54,18 @@ def right_view_recursive(root):
 
 def top_view_iterative(root):
     queue = deque()
-    queue.appendleft((root, [0, 0], 0))
-    print root.key
+    queue.appendleft((root, 0))
+    view = dict()
     while queue:
-        node, top_distance, cur_distance = queue.pop()
-        if cur_distance < top_distance[0]:
-            print node.key
-            top_distance[0] = cur_distance
-        elif cur_distance > top_distance[1]:
-            print node.key
-            top_distance[1] = cur_distance
+        node, idx = queue.pop()
+        if not view.get(idx):
+            view[idx] = node.key
         if node.left:
-            queue.appendleft((node.left, top_distance, cur_distance-1))
+            queue.appendleft((node.left, idx-1))
         if node.right:
-            queue.appendleft((node.right, top_distance, cur_distance+1))
+            queue.appendleft((node.right, idx+1))
+    for i in sorted(view):
+        print view[i]
 
 
 def bottom_view_iterative(root):
