@@ -29,6 +29,7 @@ prev = None
 
 
 def inorder1(node):
+    """ Inorder traversal w/ global variable """
     global prev
     if not node:
         return
@@ -40,6 +41,7 @@ def inorder1(node):
 
 
 def inorder2(node, prev):
+    """ Inorder traversal w/o global variable """
     if not node:
         return
     inorder2(node.left, prev)
@@ -47,6 +49,20 @@ def inorder2(node, prev):
         prev[0].next = node
     prev[0] = node
     inorder2(node.right, prev)
+
+
+next = None
+
+
+def inorder3(node):
+    """ Reversed inorder traversal w/ global variable """
+    global next
+    if not node:
+        return
+    inorder3(node.right)
+    node.next = next
+    next = node
+    inorder3(node.left)
 
 
 if __name__ == "__main__":
@@ -63,6 +79,7 @@ if __name__ == "__main__":
     #inorder1(root)
     prev = [None]
     inorder2(root, prev)
+    #inorder3(root)
 
     res = []
     node = root.left.left.left
