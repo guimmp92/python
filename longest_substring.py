@@ -37,10 +37,15 @@ def solution(text, k):
     i = 0
     uniques = [0] * 256
     for j in range(len(text)):
+        # Add new character to window
         uniques[ord(text[j])] += 1
+
+        # Re-adjust window if needed
         while count_uniques(uniques) > k:
             uniques[ord(text[i])] -= 1
             i += 1
+
+        # Check if we have a new longest substring
         if count_uniques(uniques) == k:
             if j-i+1 > maxsofar:
                 maxsofar = j-i+1
