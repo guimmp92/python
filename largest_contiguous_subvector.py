@@ -2,7 +2,8 @@
 
 """
 Given a vector x of n floating-point numbers (positive or negative), return the maximum
-sum found in any contiguous subvector of the input.
+sum found in any contiguous subvector of the input. When all inputs are negative,
+the maximum-sum subvector is the empty vector, which has sum zero.
 
 Programming Pearls p77
 """
@@ -26,8 +27,7 @@ def algo1(x):
     for i in range(len(x)):
         for j in range(len(x[i:])):
             cursum = sum(x[i:j+1])
-            if cursum > maxsofar:
-                maxsofar = cursum
+            maxsofar = max(maxsofar, cursum)
     return maxsofar
 
 
@@ -45,21 +45,16 @@ def algo2(x):
     >>> algo2([-31])
     0
     """
-    rollingsum = [0] * len(x)
-    rollingsum[0] = x[0]
-    for i in range(1, len(x)):
-        rollingsum[i] = rollingsum[i-1] + x[i]
+    rollingsum = [0] * (len(x)+1)
+    for i in range(len(x)):
+        rollingsum[i+1] = rollingsum[i] + x[i]
 
     maxsofar = 0
     for i in range(len(x)):
         cursum = 0
         for j in range(len(x[i:])):
-            if i > 0:
-                cursum = rollingsum[j] - rollingsum[i-1]
-            else:
-                cursum = rollingsum[j]
-            if cursum > maxsofar:
-                maxsofar = cursum
+            cursum = rollingsum[j+1] - rollingsum[i]
+            maxsofar = max(maxsofar, cursum)
 
     return maxsofar
 
