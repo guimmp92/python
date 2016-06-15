@@ -19,6 +19,9 @@ def count_uniques(uniques):
 
 def solution(text, k):
     """
+    Time complexity: O(n)
+    Auxiliary space complexity: O(1)
+
     >>> solution("aabbccdd", 1)
     'aa'
     >>> solution("aabbccdd", 2)
