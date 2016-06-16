@@ -25,6 +25,8 @@ def solution(arr, text):
     'xyyyyz'
     >>> solution(['x', 'y', 'z'], "xxyxyxyxxxyxxxz")
     'yxxxz'
+    >>> solution(['t', 'i', 's'], "this is a test string")
+    'this'
     """
     minsofar = text
     tracker = dict()
