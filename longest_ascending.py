@@ -6,6 +6,60 @@ subsequence of the given sequence without the consecutive constraint.
 """
 
 
+def lis(arr, i):
+    """ list(i) is the max length of seq ending at i, with arr[i] being part of it.
+        list(i) = 1 + max(lis(j)) if arr[j] < arr[i] else 1
+    """
+    maxendinghere = 1
+    for j in range(i):
+        lis_j = lis(arr, j)
+        if lis_j+1 > maxendinghere and arr[i] > arr[j]:
+            maxendinghere = lis_j+1
+    return maxendinghere
+
+
+def solution1(arr):
+    """
+    Recursive.
+    >>> solution1([10, 22, 9, 33, 21, 50, 41, 60, 80])
+    6
+    >>> solution1([1, 3, -1])
+    2
+    >>> solution1([1, 3, 2, 4, 5, 1])
+    4
+    >>> solution1([1, 20, 5, 15, 40, 10, -5, -2])
+    4
+    """
+    return max(lis(arr, i) for i in range(len(arr)))
+
+
+def lis2(arr, i, memo):
+    if not memo.get(i):
+        maxendinghere = 1
+        for j in range(i):
+            lis_j = lis2(arr, j, memo)
+            if lis_j+1 > maxendinghere and arr[i] > arr[j]:
+                maxendinghere = lis_j+1
+        memo[i] = maxendinghere
+    return memo[i]
+
+
+def solution2(arr):
+    """
+    Dynamic programming.
+    >>> solution2([10, 22, 9, 33, 21, 50, 41, 60, 80])
+    6
+    >>> solution2([1, 3, -1])
+    2
+    >>> solution2([1, 3, 2, 4, 5, 1])
+    4
+    >>> solution2([1, 20, 5, 15, 40, 10, -5, -2])
+    4
+    """
+    memo = dict()
+    return max(lis2(arr, i, memo) for i in range(len(arr)))
+
+
 def _binsearch(arr, x):
     lo, hi = 0, len(arr)-1
     while lo <= hi:
@@ -17,13 +71,14 @@ def _binsearch(arr, x):
     return lo
 
 
-def solution(arr):
+def solution3(arr):
     """
-    >>> solution([1, 3, -1])
+    Iterative. Pretty ugly.
+    >>> solution3([1, 3, -1])
     2
-    >>> solution([1, 3, 2, 4, 5, 1])
+    >>> solution3([1, 3, 2, 4, 5, 1])
     4
-    >>> solution([1, 20, 5, 15, 40, 10, -5, -2])
+    >>> solution3([1, 20, 5, 15, 40, 10, -5, -2])
     4
     """
     subs = []
