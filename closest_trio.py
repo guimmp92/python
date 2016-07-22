@@ -10,7 +10,7 @@ http://www.geeksforgeeks.org/find-three-closest-elements-from-given-three-sorted
 import sys
 
 
-def solution(arr1, arr2, arr3):
+def solution(a, b, c):
     """
     >>> solution([1, 4, 10], [2, 15, 20], [10, 12])
     (10, 15, 10)
@@ -21,20 +21,20 @@ def solution(arr1, arr2, arr3):
     diff = sys.maxint
 
     i, j, k = 0, 0, 0
-    while i < len(arr1) and j < len(arr2) and k < len(arr3):
+    while i < len(a) and j < len(b) and k < len(c):
         # Do we have a new closest trio?
-        curdiff = max(abs(arr1[i]-arr2[j]), abs(arr1[i]-arr3[k]), abs(arr2[j]-arr3[k]))
+        curdiff = max(abs(a[i]-b[j]), abs(b[j]-c[k]), abs(c[k]-a[i]))
         if curdiff < diff:
             diff = curdiff
-            closest_trio = (arr1[i], arr2[j], arr3[k])
+            closest_trio = (a[i], b[j], c[k])
 
         # Increment i, j or k
-        curmin = min([arr1[i], arr2[j], arr3[k]])
-        if arr1[i] == curmin:
+        curmin = min([a[i], b[j], c[k]])
+        if a[i] == curmin:
             i += 1
-        elif arr2[j] == curmin:
+        elif b[j] == curmin:
             j += 1
-        elif arr3[k] == curmin:
+        elif c[k] == curmin:
             k += 1
 
     return closest_trio
