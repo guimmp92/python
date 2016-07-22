@@ -27,9 +27,9 @@ def solution(arr):
     lo, hi = 0, len(arr)-1
     while lo <= hi:
         mid = (lo+hi)//2
-        if arr[mid] == mid:
+        if arr[mid] - mid == 0:
             return mid
-        if arr[mid] > mid:
+        if arr[mid] - mid < 0:
             hi = mid - 1
         else:
             lo = mid + 1
