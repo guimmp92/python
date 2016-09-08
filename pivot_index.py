@@ -27,7 +27,7 @@ def pivot_index(arr):
             curmax = arr[i]
             if pivot == -1:
                 pivot = i
-        elif arr[i] < arr[pivot]:
+        elif pivot != -1 and arr[i] < arr[pivot]:
             pivot = -1
     return pivot
 
