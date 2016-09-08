@@ -16,8 +16,3 @@ def solution(root, n):
         else:
             node = node.right
     return successor
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
