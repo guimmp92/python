@@ -7,10 +7,10 @@ from linked_list import randlinkedlist
 
 
 def solution1(head):
-    """
+    '''
     Time complexity: O(n)
     Space complexity: O(n)
-    """
+    '''
     counter = dict()
     back, cur = None, head
     while cur:
@@ -24,10 +24,10 @@ def solution1(head):
 
 
 def solution2(head):
-    """
+    '''
     Time complexity: O(n^2)
     Space complexity: O(1)
-    """
+    '''
     cur = head
     while cur:
         runner = cur
@@ -36,6 +36,22 @@ def solution2(head):
                 runner.next = runner.next.next
             else:
                 runner = runner.next
+        cur = cur.next
+
+
+def solution3(head):
+    '''
+    Same as solution2.
+    '''
+    cur = head
+    while cur:
+        prev, runner = cur, cur.next
+        while runner:
+            if runner.value != cur.value:
+                prev.next = runner
+                prev = runner
+            runner = runner.next
+        prev.next = None
         cur = cur.next
 
 
@@ -49,6 +65,6 @@ if __name__ == "__main__":
     ll = randlinkedlist(max=10)
     print "Original linked list: "
     _print(ll.head)
-    solution1(ll.head)
+    solution(ll.head)
     print "Cleaned up linked list: "
     _print(ll.head)
