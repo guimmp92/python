@@ -6,7 +6,7 @@ How to check if a string contains an anagram of another string?
 Example: The string "coding interview questions" contains an anagram of the string
 "weivretni".
 
-ihttp://blog.gainlo.co/index.php/2016/04/08/if-a-string-contains-an-anagram-of-another-string/
+http://blog.gainlo.co/index.php/2016/04/08/if-a-string-contains-an-anagram-of-another-string/
 """
 from collections import defaultdict
 
