@@ -8,45 +8,6 @@ Implement a function which returns fib(N) where:
 """
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def fib_recursive(N):
     """
     Time complexity: O(2^n)
