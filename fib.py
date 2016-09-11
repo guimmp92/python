@@ -8,6 +8,45 @@ Implement a function which returns fib(N) where:
 """
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def fib_recursive(N):
     """
     Time complexity: O(2^n)
@@ -42,6 +81,25 @@ def fib_dp(N):
 
     return memo[N]
 
+
+memo = dict()
+memo[0] = 1
+memo[1] = 1
+
+
+def fib_dp_top_down(N):
+    """
+    Time complexity: O(n)
+    >>> fib_dp_top_down(2)
+    2
+    >>> fib_dp_top_down(4)
+    5
+    >>> fib_dp_top_down(12)
+    233
+    """
+    if not memo.get(N):
+        memo[N] = fib_dp_top_down(N-1) + fib_dp_top_down(N-2)
+    return memo[N]
 
 if __name__ == "__main__":
     import doctest
