@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 An integer X and a non-empty zero-indexed array A consisting of N integers are given.
