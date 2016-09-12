@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 You are given n types of coin denominations of values V1 < V2 < ... < Vn (all integers).
