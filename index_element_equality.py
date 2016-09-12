@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Given an array of sorted distinct integers named arr, write a function that returns an
@@ -30,7 +31,7 @@ def solution(arr):
         if arr[mid] - mid == 0:
             return mid
         if arr[mid] - mid < 0:
-            hi = mid - 1
-        else:
             lo = mid + 1
+        else:
+            hi = mid - 1
     return -1
