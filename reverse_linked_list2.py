@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Reverse a linked list in groups of size k.
@@ -12,6 +13,8 @@ print "The linked list: {0}".format(ll)
 
 
 def reverse_linked_list(head, k):
+    if not head:
+        return
     node = head
     prev, next = None, None
     count = 0
@@ -20,8 +23,7 @@ def reverse_linked_list(head, k):
         node.next = prev
         prev, node = node, next
         count += 1
-    if next:
-        head.next = reverse_linked_list(next, k)
+    head.next = reverse_linked_list(node, k)
     return prev
 
 
