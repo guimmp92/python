@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Given a rod of length n inches and an array of prices that contains prices of all pieces
@@ -16,6 +17,8 @@ def recursive(values, length):
     max_value = 0
     for i in range(length):
         max_value = max(max_value, recursive(values, length-i-1) + values[i])
+    # Alternatively:
+    #return max(v + rec(length-l-1, values) for l, v in enumerate(values) if l+1 <= length)
 
     return max_value
 
