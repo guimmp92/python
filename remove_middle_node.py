@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Delete a node in the middle of a singly linked list, given only access to that node.

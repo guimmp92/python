@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 A zero-indexed array A consisting of N integers is given. An equilibrium index of this

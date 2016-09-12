@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Write a program to reverse the direction of a given singly-linked list.
