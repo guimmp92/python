@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Given a vector x of n floating-point numbers (positive or negative), return the maximum
@@ -52,7 +53,7 @@ def algo2(x):
     maxsofar = 0
     for i in range(len(x)):
         cursum = 0
-        for j in range(len(x[i:])):
+        for j in range(i, len(x)):
             cursum = rollingsum[j+1] - rollingsum[i]
             maxsofar = max(maxsofar, cursum)
 

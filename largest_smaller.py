@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Given a root of a binary search tree and a key x, find the largest key in the tree that
