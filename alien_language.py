@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Given a sorted dictionary (array of words) of an alien language, find order of

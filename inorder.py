@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Part 1: Given a binary search tree, print the elements in-order iteratively without using
