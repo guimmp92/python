@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Find the longest substring with k unique characters.
@@ -10,11 +11,6 @@ If K is 3, the longest substring can be "aabbcc".
 http://blog.gainlo.co/index.php/2016/04/12/find-the-longest-substring-with-k-unique-characters/
 http://www.geeksforgeeks.org/find-the-longest-substring-with-k-unique-characters-in-a-given-string/
 """
-from collections import defaultdict
-
-
-def count_uniques(uniques):
-    return len([e for e in uniques if e != 0])
 
 
 def solution(text, k):
@@ -35,24 +31,27 @@ def solution(text, k):
     >>> solution("ababebebe", 4)
     ''
     """
-    res = ""
-    maxsofar = 0
-    i = 0
-    uniques = [0] * 256
-    for j in range(len(text)):
+    def _count_uniques(uniques):
+        return len([e for e in uniques if e != 0])
+
+    res = ''
+    lo = 0
+    # We need to keep track of both the chars we've seen and their count
+    chars = [0] * 256
+
+    for hi in range(len(text)):
         # Add new character to window
-        uniques[ord(text[j])] += 1
+        chars[ord(text[hi])] += 1
 
         # Re-adjust window if needed
-        while count_uniques(uniques) > k:
-            uniques[ord(text[i])] -= 1
-            i += 1
+        while _count_uniques(chars) > k:
+            chars[ord(text[lo])] -= 1
+            lo += 1
 
         # Check if we have a new longest substring
-        if count_uniques(uniques) == k:
-            if j-i+1 > maxsofar:
-                maxsofar = j-i+1
-                res = text[i:j+1]
+        if _count_uniques(chars) == k and (hi-lo+1) > len(res):
+                res = text[lo:hi+1]
+
     return res
 
 
