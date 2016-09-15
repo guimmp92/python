@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Given a 2D array, print it in spiral form. See the following examples.
