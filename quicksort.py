@@ -26,23 +26,24 @@ def partition(a, left, right):
 
 
 def partition2(a, left, right):
-    pivot_idx = (left+right)//2
-    pivot = a[pivot_idx]
-    to_copy = left
-    a[pivot_idx], a[right] = a[right], a[pivot_idx]
+    mid = (left+right)//2
+    pivot = a[mid]
+    a[mid], a[right] = a[right], a[mid]
+    gt_start = left  # 'greater than' start
     for i in range(left, right):
         if a[i] < pivot:
-            a[to_copy], a[i] = a[i], a[to_copy]
-            to_copy += 1
-    a[to_copy], a[right] = a[right], a[to_copy]
-    return to_copy
+            a[gt_start], a[i] = a[i], a[gt_start]
+            gt_start += 1
+    a[gt_start], a[right] = a[right], a[gt_start]
+    return gt_start
 
 
 def quicksort(a, left, right):
-    if left < right:
-        idx = partition2(a, left, right)
-        quicksort(a, left, idx-1)
-        quicksort(a, idx+1, right)
+    if right >= left:
+        return
+    pivot = partition(a, left, right)
+    quicksort(a, left, pivot-1)
+    quicksort(a, pivot+1, right)
 
 
 quicksort(arr, 0, len(arr)-1)
