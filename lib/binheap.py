@@ -54,7 +54,7 @@ class BinHeap(object):
 
     def delmin(self):
         if self.size <= 0:
-          return
+            return
 
         min_elem = self.data[1]
 
