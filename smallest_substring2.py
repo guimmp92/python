@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Given two strings string1 and string2, find the smallest substring in string1 containing

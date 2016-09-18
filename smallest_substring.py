@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Given an array with unique characters arr and a string str, find the smallest substring
