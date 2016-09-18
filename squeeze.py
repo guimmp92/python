@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Write a function that removes characters from a string.
@@ -8,13 +9,12 @@ Programming Interviews Exposed p83
 
 def squeeze(text, chars):
     text = list(text)
-    to_copy = 0
-    for idx, char in enumerate(text):
-        if char not in chars:
-            text[to_copy] = text[idx]
-            to_copy += 1
-    for i in range(len(text)-to_copy):
-        text.pop()
-    return "".join(text)
+    i = 0
+    for j in range(len(text)):
+        if text[j] not in chars:
+            text[i], text[j] = text[j], text[i]
+            i += 1
+    return ''.join(text[:i])
 
-print squeeze("Bonjour monsieur le codeur", "jnr")  # Boou mosieu le codeucodeur
+
+print squeeze('the dog barked at the mailman', 'tim')
