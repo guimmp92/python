@@ -8,16 +8,6 @@ all characters of string2 efficiently.
 http://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/
 """
 
-def _debug(arr):
-    for i, c in enumerate(arr):
-        if c > 0:
-            print chr(i), c
-    print
-
-
-def is_valid(window, count_needed):
-    return all([window[i] >= c for i, c in enumerate(count_needed) if c > 0])
-
 
 def solution(arr, text):
     """
@@ -25,14 +15,15 @@ def solution(arr, text):
     >>> solution(['t', 'i', 's', 't'], "this is a test string")
     't stri'
     """
-    res = ""
+    def _has_all_chars(needed, tracker):
+        return all(x <= y for x, y in zip(needed, tracker))
+
+    res = text
 
     count_needed = [0] * 256
     for c in arr:
         count_needed[ord(c)] += 1
 
-
-    minsofar = len(text)
     lo = 0
     window = [0] * 256
     for hi in range(len(text)):
@@ -40,9 +31,8 @@ def solution(arr, text):
         window[ord(text[hi])] += 1
 
         # Remove trailing characters from window and check if we have a new smallest
-        while is_valid(window, count_needed):
-            if hi-lo+1 < minsofar:
-                minsofar = hi-lo+1
+        while _has_all_chars(count_needed, window):
+            if hi-lo+1 < len(res):
                 res = text[lo:hi+1]
             window[ord(text[lo])] -= 1
             lo += 1
