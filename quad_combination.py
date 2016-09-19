@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel-0
 
 """
 https://www.pramp.com/question/gKQ5zA52mySBOA5GALj9
@@ -11,6 +12,7 @@ in arr, or null if no such combination exists.
 """
 from collections import defaultdict
 from itertools import product
+from sets import ImmutableSet
 
 
 def solution(arr, S):
@@ -34,6 +36,24 @@ def solution(arr, S):
             indices = [i for t in pr for i in t]
             if len(set(indices)) == 4:
                 return indices
+
+
+def solution1(arr, S):
+    """
+    Same but using sets.
+    >>> solution1([3, 7 , 1, 8, -3, 0, 2, 7, -4, -2], -8)
+    [2, 4, 8, 9]
+    """
+    pairs = defaultdict(list)  # sum -> list of pairs of index
+    for i in range(len(arr)):
+        for j in range(i+1, len(arr)):
+            pairs[arr[i]+arr[j]].append(ImmutableSet([i, j]))
+    for k in pairs.keys():
+        if not pairs.get(S-k):
+            continue
+        for t1, t2 in zip(pairs[k], pairs[S-k]):
+            if len(t1.union(t2)) == 4:
+                return sorted(list(t1.union(t2)))
 
 
 if __name__ == "__main__":
