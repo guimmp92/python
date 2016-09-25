@@ -65,6 +65,11 @@ your_it = ([9,0,1,3,5,6,2])
 Your solution uses O(n+m) space in the worst case. Can you do better if the
 lists are always sorted?
 
+e.g.
+it1 = iter([0,1,3,5])
+it2 = iter([1,3,5,6])
+your_it = ([0,1,3,5,6])
+
 # Difficulties
 
 * Know about iterators (the only way to know they're empty is if they throw an exception)
@@ -78,14 +83,55 @@ lists are always sorted?
 
 
 def warmup(it1, it2):
+    """
+    >>> list(warmup(iter([4, 1, 1, 3, 4]), iter([0, 0, 1, 4, 3, 5])))
+    [0, 1, 3, 4, 5]
+    """
     uniques = set()
     for element in chain(it1, it2):
-        if element not in uniques:
-            uniques.add(element)
-            yield element
+        uniques.add(element)
+    return iter(uniques)
+
+
+def exhaust(it, val):
+    res = None
+    try:
+        while True:
+            res = next(it)
+            if res != val:
+                break
+    except StopIteration:
+        pass
+    return res
 
 
 def followup(it1, it2):
+    """
+    >>> list(followup(iter([1, 1, 2, 3, 4]), iter([0, 0, 1, 3, 3, 5])))
+    [0, 1, 2, 3, 4, 5]
+    """
+    next1, next2 = next(it1), next(it2)
+    while next1 is not None and next2 is not None:
+        if next1 <= next2:
+            res = next1
+            next1 = exhaust(it1, res)
+            if next2 == res:
+                next2 = exhaust(it2, res)
+        else:
+            res = next2
+            next2 = exhaust(it2, res)
+        yield res
+    while next1 is not None:
+        res = next1
+        next1 = exhaust(it1, res)
+        yield res
+    while next2 is not None:
+        res = next2
+        next2 = exhaust(it2, res)
+        yield res
+
+
+def followup2(it1, it2):
     pit1 = PeekingIterator(it1)
     pit2 = PeekingIterator(it2)
     while pit1.has_next() and pit2.has_next():
@@ -100,12 +146,11 @@ def followup(it1, it2):
 
 
 class PeekingIterator(object):
-    """ https://github.com/kamyu104/LeetCode/blob/master/Python/peeking-iterator.py """
     def __init__(self, iterator):
         self.iterator = iterator
         self._get_next()
 
-    def _get_next(self):
+    def _get_next(self, prev=None):
         try:
             self._next = next(self.iterator)
         except StopIteration:
@@ -118,7 +163,7 @@ class PeekingIterator(object):
         res = None
         if self._next:
             res = self._next
-            self._get_next()
+            self._get_next(res)
         return res
 
     def peek(self):
@@ -128,14 +173,3 @@ class PeekingIterator(object):
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-
-    pi = PeekingIterator(iter([1, 2, 3]))
-    print pi.next()
-    print pi.has_next()
-    print pi.peek()
-    print pi.next()
-    print pi.peek()
-    print pi.next()
-    print pi.has_next()
-    print pi.peek()
-    print pi.next()
