@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 How to check if a string contains an anagram of another string?
@@ -20,21 +21,17 @@ def solution(a, b):
     >>> solution("coding interview questions", "abcde")
     False
     """
-    count = defaultdict(int)
-    window = defaultdict(int)
+    tracker = [0] * 256
     for i in range(len(b)):
-        count[b[i]] += 1
-        window[a[i]] += 1
-
-    for i in range(len(a)-len(b)):
-        if window == count:
+        tracker[ord(b[i])] += 1
+    lo = 0
+    for hi in range(len(a)):
+        tracker[ord(a[hi])] -= 1
+        while hi-lo+1 > len(b):
+            tracker[ord(a[lo])] += 1
+            lo += 1
+        if hi-lo+1 == len(b) and all([c == 0 for c in tracker]):
             return True
-        window[a[i+len(b)]] += 1
-        window[a[i]] -= 1
-        for j in window.keys():
-            if window[j] == 0:
-                del window[j]
-
     return False
 
 
