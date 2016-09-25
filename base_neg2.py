@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 In base -2, integers are represented in sequences of bits in the following way. Bits are
@@ -6,6 +7,9 @@ ordered from the least to the most significant. Sequence B of N bits represents 
 number: sum{ B[i]*(-2)^i for i = 0..N-1 }. The empty sequence represents 0.
 
 Note that such a representation is suitable for both positive and negative integers.
+
+Write a function that, give a 0-indexed A array of M bits, containing a sequence
+representing some integer X, return the shortest sequence of bits representing -X.
 
 For example, given A = [1, 0, 0, 1, 1] (X=9), the solution should return [1, 1, 0, 1]
 (-X=-9). Given A = [1, 0, 0, 1, 1, 1] (X=-23), the solution should return
@@ -22,36 +26,6 @@ For negative b, by the way, everything just flips, and the invariant becomes:
 0 >= r > b.
 </quote>
 """
-from math import floor
-
-
-def _quotient(dividend, remainder):
-    return (dividend - remainder) // -2.
-
-
-def initial_solution(A):
-    """
-    >>> solution([1, 0, 0, 1, 1])
-    [1, 1, 0, 1]
-    >>> solution([1, 0, 0, 1, 1, 1])
-    [1, 1, 0, 1, 0, 1, 1]
-    """
-    res = []
-    num = 0
-    for i in range(len(A)):
-        num += A[i]*pow(-2, i)
-
-    num *= -1
-    while num != 0:
-        q = _quotient(num, 0)
-        if floor(q) == q:
-            res.append(0)
-        else:
-            q = _quotient(num, 1)
-            res.append(1)
-        num = q
-
-    return res
 
 
 def solution(A):
