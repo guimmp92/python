@@ -1,11 +1,11 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Write a program to determine the lowest common ancestor of two nodes in a binary search
 tree.
 
 https://www.codeeval.com/open_challenges/11/
-
 """
 import sys
 
