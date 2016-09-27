@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Level ordering of binary search tree.

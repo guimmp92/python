@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
 Write a function to determine if a binary tree is balanced.
