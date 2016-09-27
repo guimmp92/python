@@ -40,7 +40,7 @@ def partition2(a, left, right):
 
 
 def quicksort(a, left, right):
-    if right >= left:
+    if left >= right:
         return
     pivot = partition(a, left, right)
     quicksort(a, left, pivot-1)
