@@ -7,18 +7,20 @@ increasing subsequence of the given sequence without the consecutive constraint.
 """
 
 
-def lis(arr, i):
-    """ list(i) is the max length of seq ending at i, with arr[i] being part of it.
-        list(i) = 1 + max(lis(j)) if arr[j] < arr[i] else 1
+def lis(arr, j):
+    """ list(j) is the max length of seq ending at i, with arr[j] being part of it.
+        list(j) = 1 + max(lis(i)) if arr[i] < arr[j] else 1
     """
-    if i == 0:
+    if j == 0:
         return 1
     curmax = 0
-    for j in range(i):
-        lis_j = lis(arr, j)
-        if arr[j] < arr[i]:
-            curmax = max(curmax, lis_j)
+    for i in range(j):
+        lis_i = lis(arr, i)
+        if arr[i] < arr[j]:
+            curmax = max(curmax, lis_i)
     return 1 + curmax
+    # Alternatively:
+    # return 1 + max([lis(arr, i) for i in range(j) if arr[i] < arr[j]] + [0])
 
 
 def solution1(arr):
