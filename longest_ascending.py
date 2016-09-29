@@ -51,7 +51,7 @@ def lis2(arr, i, memo):
 
 def solution2(arr):
     """
-    Dynamic programming.
+    Dynamic programming. O(n^2)
     >>> solution2([10, 22, 9, 33, 21, 50, 41, 60, 80])
     6
     >>> solution2([1, 3, -1])
