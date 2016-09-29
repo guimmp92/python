@@ -7,6 +7,9 @@ Assume V1 = 1, so you can always make change for any amount of money M.
 Give an algorithm which gets the minimal number of coins that make change for an amount
 of money M.
 
+Note: This problem is equivalent to the knapsack problem w/ the constraint that
+      we fill the knapsack exactly to its capacity C.
+
 http://blog.gainlo.co/index.php/2015/10/22/a-step-by-step-guide-to-dynamic-programming/
 """
 
@@ -31,7 +34,7 @@ def recursive(M, V):
 
 def dp(M, V):
     """
-    Time complexity: O(n)
+    Time complexity: O(nM) where n is the denomitation count and M the change amount
     >>> dp(12, [1, 2, 5])
     3
     >>> dp(13, [1, 2, 5])
