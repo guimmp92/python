@@ -16,9 +16,9 @@ def lis(arr, j):
     curmax = 0
     for i in range(j):
         lis_i = lis(arr, i)
-        if arr[i] < arr[j]:
-            curmax = max(curmax, lis_i)
-    return 1 + curmax
+        if arr[i] < arr[j] and lis_i+1 > curmax:
+            curmax = lis_i+1
+    return curmax
     # Alternatively:
     # return 1 + max([lis(arr, i) for i in range(j) if arr[i] < arr[j]] + [0])
 
@@ -38,15 +38,23 @@ def solution1(arr):
     return max(lis(arr, i) for i in range(len(arr)))
 
 
-def lis2(arr, i, memo):
-    if memo[i] == -1:
+def lis2(arr, j, memo):
+    """
+    It's very easy to make mistakes here.
+    - You want to make sure that all max ascending subsequences for i in 0..j are
+      being computed. So watch for the if condition on line 7 (it has to be after
+      the recursive call to lis(i).
+    - Likewise don't try to make the code more concise. This won't work:
+      # return 1 + max([lis(X, i, memo) for i in range(j) if X[i] < X[j]] + [0])
+    """
+    if memo[j] == -1:
         curmax = 0
-        for j in range(i):
-            lis_j = lis2(arr, j, memo)
-            if arr[j] < arr[i]:
-                curmax = max(curmax, lis_j)
-        memo[i] = 1 + curmax
-    return memo[i]
+        for i in range(j):
+            lis_i = lis2(arr, i, memo)
+            if arr[i] < arr[j] and lis_i+1 > curmax:
+                curmax = lis_i+1
+        memo[j] = curmax
+    return memo[j]
 
 
 def solution2(arr):
@@ -62,6 +70,7 @@ def solution2(arr):
     4
     """
     memo = [-1] * len(arr)
+    memo[0] = 1
     lis2(arr, len(arr)-1, memo)
     return max(memo)
 
