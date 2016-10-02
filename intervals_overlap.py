@@ -1,8 +1,7 @@
 #!/usr/bin/python
+# vim: foldlevel=0
 
 """
-http://www.geeksforgeeks.org/find-the-point-where-maximum-intervals-overlap/
-
 Consider a big party where a log register for guest's entry and exit times is maintained.
 Find the time at which there are maximum guests in the party. Note that entries in
 register are not in any order.
@@ -16,6 +15,8 @@ Input: arrl[] = {1, 2, 9, 5, 5}
 
        Output: 5
        There are maximum 3 guests at time 5.
+
+http://www.geeksforgeeks.org/find-the-point-where-maximum-intervals-overlap/
 """
 
 
