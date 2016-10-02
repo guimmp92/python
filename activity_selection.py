@@ -50,7 +50,6 @@ def solution2(S, E):
     return max(memo)
 
 
-
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
