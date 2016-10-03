@@ -46,11 +46,13 @@ def solution1(arrl, exit):
             maxidx = i
 
     return min_arrl + maxidx
+    # Alternatively:
+    #return min_arrl+next(i for i, c in enumerate(count) if c == max(count))
 
 
 def solution2(arrl, exit):
     """
-    Time complexity: O(n)
+    Time complexity: O(nlog(n)) for the sorting
     Traverse both arrival and exit lists in parallel using merge portion of mergesort
     and keep track of max number of overlap.
     >>> solution2([1, 2, 9, 5, 5], [4, 5, 12, 9, 12])
